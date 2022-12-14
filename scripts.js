@@ -1,5 +1,3 @@
-
-
 const posts = [
     {
         title: "Google Chrome",
@@ -16,15 +14,23 @@ const posts = [
 ];
 
 const wrapper = document.getElementById("posts");
-;
 
 for (let i=0; i<posts.length; i++) {
+    const postData = posts[i];
+    console.log(postData);
+    
+    const article = document.createElement("article");
+    article.classList.add("article");
 
-    const potsData = posts[i];
-    console.log (potsData)
+    const title = document.createElement("h2");
+    const titleText = document.createTextNode(postData.title);
+    title.appendChild(titleText);
+    article.appendChild(title);
 
-    const article = document.createElement("article")
+    const content = document.createElement("p");
+    const contentText = document.createTextNode(postData.content);
+    content.appendChild(contentText);
+    article.appendChild(content);
 
-    wrapper.appendChild(article)
-
+    wrapper.appendChild(article);
 }
